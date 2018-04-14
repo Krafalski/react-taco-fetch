@@ -22,7 +22,7 @@ class Main extends Component {
       tacos: []
     }
 
-  componentDidMount(){
+  getTaco(){
     fetch('http://taco-randomizer.herokuapp.com/random/?full-tack=true')
       .then(response => response.json())
       .then(data => {
@@ -32,11 +32,16 @@ class Main extends Component {
           }
         )
       })
+  }
+
+  componentDidMount(){
+      this.getTaco()
     }
 
   render(){
     return(
       <main>
+        <button onClick={this.getTaco.bind(this)}>Another Taco Please!</button>
         <h1>{this.props.title}</h1>
         <ul>
          {this.state.tacos.map((taco, index) => <ListItem key={index}
@@ -45,7 +50,6 @@ class Main extends Component {
          seasoning={taco.seasoning}
          condiment={taco.condiment}
          baselayer={taco.base_layer}
-
          ></ListItem>
          )}
         </ul>

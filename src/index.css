@@ -6,6 +6,8 @@
   --mint-cream: #f7fff7;
   --pastel-red: #ff6b6b;
   --maize: #ffe66d;
+  --wine-dregs: #5E343F;
+  --tuscan-red: #774150;
 
 }
 body {
@@ -18,7 +20,7 @@ body {
 h1 {
   color: var(--medium-turqoise);
   font-family: 'Gamja Flower', cursive;
-  font-size:3em;
+  font-size:4em;
 }
 
 h2 {
@@ -35,3 +37,18 @@ p {
   font-family: 'Gamja Flower', cursive;
   padding: 2em;
 }
+
+button {
+  background: var(--wine-dregs);
+  color: var(--maize);
+  padding: 1em;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.5em;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 5em;
+  right: 3em;
+}
+
+button:focus {outline:0;}
+button:active {background:var(--tuscan-red);}
